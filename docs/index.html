@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset='utf-8' />
-  <title>@ledgerhq/wallet-common 3.7.1 | Documentation</title>
+  <title>@ledgerhq/wallet-common 3.8.0-beta.7 | Documentation</title>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
   <link href='assets/bass.css' type='text/css' rel='stylesheet' />
   <link href='assets/style.css' type='text/css' rel='stylesheet' />
@@ -14,7 +14,7 @@
       <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
         <div class='py1 px2'>
           <h3 class='mb0 no-anchor'>@ledgerhq/wallet-common</h3>
-          <div class='mb1'><code>3.7.1</code></div>
+          <div class='mb1'><code>3.8.0-beta.7</code></div>
           <input
             placeholder='Filter'
             id='filter-input'
@@ -35,29 +35,9 @@
               
                 
                 <li><a
-                  href='#parsechunksreducer'
+                  href='#makechunks'
                   class="">
-                  parseChunksReducer
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#arechunkscomplete'
-                  class="">
-                  areChunksComplete
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#chunkstoresult'
-                  class="">
-                  chunksToResult
+                  makeChunks
                   
                 </a>
                 
@@ -329,6 +309,36 @@
               
                 
                 <li><a
+                  href='#parsechunksreducer'
+                  class="">
+                  parseChunksReducer
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#arechunkscomplete'
+                  class="">
+                  areChunksComplete
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#chunkstoresult'
+                  class="">
+                  chunksToResult
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
                   href='#bignumber'
                   class="">
                   BigNumber
@@ -367,7 +377,7 @@
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/9bbab2aab84db2c04e93289439e0736d050b87b6/src/bridgestream/exporter.js#L30-L47'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/11aed30ac80afb669773118f04c94fe6e52d84ea/src/bridgestream/exporter.js#L28-L45'>
       <span>src/bridgestream/exporter.js</span>
       </a>
     
@@ -420,6 +430,14 @@
 
               
                 <tr>
+  <td class='break-word'><span class='code bold'>$0.settings</span> <code class='quiet'>any</code>
+  </td>
+  <td class='break-word'><span></span></td>
+</tr>
+
+
+              
+                <tr>
   <td class='break-word'><span class='code bold'>$0.exporterName</span> <code class='quiet'>any</code>
   </td>
   <td class='break-word'><span></span></td>
@@ -436,7 +454,9 @@
 
               
                 <tr>
-  <td class='break-word'><span class='code bold'>$0.pad</span> <code class='quiet'>any</code>
+  <td class='break-word'><span class='code bold'>$0.chunkSize</span> <code class='quiet'>any</code>
+  
+    (default <code>120</code>)
   </td>
   <td class='break-word'><span></span></td>
 </tr>
@@ -479,22 +499,22 @@
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='parsechunksreducer'>
-      parseChunksReducer
+    <h3 class='fl m0' id='makechunks'>
+      makeChunks
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/9bbab2aab84db2c04e93289439e0736d050b87b6/src/bridgestream/importer.js#L20-L46'>
-      <span>src/bridgestream/importer.js</span>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/11aed30ac80afb669773118f04c94fe6e52d84ea/src/qrstream/exporter.js#L18-L39'>
+      <span>src/qrstream/exporter.js</span>
       </a>
     
   </div>
   
 
-  <p>reduce chunks data array to add on more chunk to it</p>
+  <p>export data into a chunk of string that you can generate a QR with</p>
 
 
-  <div class='pre p1 fill-light mt0'>parseChunksReducer(chunks: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;Data>, chunk: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;Data></div>
+  <div class='pre p1 fill-light mt0'>makeChunks(data: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, chunkSize: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>></div>
   
   
 
@@ -511,7 +531,7 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>chunks</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;Data>)</code>
+            <span class='code bold'>data</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
 	    
           </div>
           
@@ -519,7 +539,7 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>chunk</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+            <span class='code bold'>chunkSize</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
 	    
           </div>
           
@@ -533,145 +553,7 @@
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;Data></code>
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='arechunkscomplete'>
-      areChunksComplete
-    </h3>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/9bbab2aab84db2c04e93289439e0736d050b87b6/src/bridgestream/importer.js#L52-L53'>
-      <span>src/bridgestream/importer.js</span>
-      </a>
-    
-  </div>
-  
-
-  <p>check if the chunks have all been retrieved</p>
-
-
-  <div class='pre p1 fill-light mt0'>areChunksComplete</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>chunks</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;Data>)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='chunkstoresult'>
-      chunksToResult
-    </h3>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/9bbab2aab84db2c04e93289439e0736d050b87b6/src/bridgestream/importer.js#L59-L114'>
-      <span>src/bridgestream/importer.js</span>
-      </a>
-    
-  </div>
-  
-
-  <p>return final result of the chunks. assuming you have checked <code>areChunksComplete</code></p>
-
-
-  <div class='pre p1 fill-light mt0'>chunksToResult(rawChunks: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;Data>): Result</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>rawChunks</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;Data>)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>Result</code>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>></code>
     
   
 
@@ -699,7 +581,7 @@
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/9bbab2aab84db2c04e93289439e0736d050b87b6/src/countervalues/index.js#L59-L60'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/11aed30ac80afb669773118f04c94fe6e52d84ea/src/countervalues/index.js#L60-L61'>
       <span>src/countervalues/index.js</span>
       </a>
     
@@ -763,7 +645,7 @@
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/9bbab2aab84db2c04e93289439e0736d050b87b6/src/helpers/currencies/valueFromUnit.js#L10-L11'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/11aed30ac80afb669773118f04c94fe6e52d84ea/src/helpers/currencies/valueFromUnit.js#L10-L11'>
       <span>src/helpers/currencies/valueFromUnit.js</span>
       </a>
     
@@ -836,7 +718,7 @@ For instance, for 1 BTC, valueFromUnit(1, btcUnit) returns 100000000</p>
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/9bbab2aab84db2c04e93289439e0736d050b87b6/src/data/cryptocurrencies.js#L32-L32'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/11aed30ac80afb669773118f04c94fe6e52d84ea/src/data/cryptocurrencies.js#L32-L32'>
       <span>src/data/cryptocurrencies.js</span>
       </a>
     
@@ -906,7 +788,7 @@ If you don't have <code>jest</code> installed locally you can install it with <c
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/9bbab2aab84db2c04e93289439e0736d050b87b6/src/DataModel.js#L10-L18'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/11aed30ac80afb669773118f04c94fe6e52d84ea/src/DataModel.js#L10-L18'>
       <span>src/DataModel.js</span>
       </a>
     
@@ -954,7 +836,7 @@ If you don't have <code>jest</code> installed locally you can install it with <c
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/9bbab2aab84db2c04e93289439e0736d050b87b6/src/DataModel.js#L6-L9'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/11aed30ac80afb669773118f04c94fe6e52d84ea/src/DataModel.js#L6-L9'>
       <span>src/DataModel.js</span>
       </a>
     
@@ -1037,7 +919,7 @@ If you don't have <code>jest</code> installed locally you can install it with <c
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/9bbab2aab84db2c04e93289439e0736d050b87b6/src/DataModel.js#L20-L23'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/11aed30ac80afb669773118f04c94fe6e52d84ea/src/DataModel.js#L20-L23'>
       <span>src/DataModel.js</span>
       </a>
     
@@ -1120,7 +1002,7 @@ If you don't have <code>jest</code> installed locally you can install it with <c
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/9bbab2aab84db2c04e93289439e0736d050b87b6/src/DataModel.js#L36-L58'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/11aed30ac80afb669773118f04c94fe6e52d84ea/src/DataModel.js#L36-L58'>
       <span>src/DataModel.js</span>
       </a>
     
@@ -1200,7 +1082,7 @@ If you don't have <code>jest</code> installed locally you can install it with <c
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/9bbab2aab84db2c04e93289439e0736d050b87b6/src/helpers/account.js#L5-L5'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/11aed30ac80afb669773118f04c94fe6e52d84ea/src/helpers/account.js#L5-L5'>
       <span>src/helpers/account.js</span>
       </a>
     
@@ -1248,7 +1130,7 @@ If you don't have <code>jest</code> installed locally you can install it with <c
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/9bbab2aab84db2c04e93289439e0736d050b87b6/src/helpers/account.js#L26-L46'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/11aed30ac80afb669773118f04c94fe6e52d84ea/src/helpers/account.js#L26-L46'>
       <span>src/helpers/account.js</span>
       </a>
     
@@ -1331,7 +1213,7 @@ The last item of the array is the balance available right now.</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/9bbab2aab84db2c04e93289439e0736d050b87b6/src/helpers/account.js#L54-L87'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/11aed30ac80afb669773118f04c94fe6e52d84ea/src/helpers/account.js#L54-L87'>
       <span>src/helpers/account.js</span>
       </a>
     
@@ -1422,7 +1304,7 @@ NB the last item of the array is actually the current total balance.</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/9bbab2aab84db2c04e93289439e0736d050b87b6/src/helpers/account.js#L94-L150'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/11aed30ac80afb669773118f04c94fe6e52d84ea/src/helpers/account.js#L94-L150'>
       <span>src/helpers/account.js</span>
       </a>
     
@@ -1502,7 +1384,7 @@ NB the last item of the array is actually the current total balance.</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/9bbab2aab84db2c04e93289439e0736d050b87b6/src/helpers/account.js#L156-L161'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/11aed30ac80afb669773118f04c94fe6e52d84ea/src/helpers/account.js#L156-L161'>
       <span>src/helpers/account.js</span>
       </a>
     
@@ -1591,7 +1473,7 @@ NB the last item of the array is actually the current total balance.</p>
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/9bbab2aab84db2c04e93289439e0736d050b87b6/src/helpers/operation.js#L6-L6'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/11aed30ac80afb669773118f04c94fe6e52d84ea/src/helpers/operation.js#L6-L6'>
       <span>src/helpers/operation.js</span>
       </a>
     
@@ -1639,7 +1521,7 @@ NB the last item of the array is actually the current total balance.</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/9bbab2aab84db2c04e93289439e0736d050b87b6/src/helpers/account.js#L26-L46'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/11aed30ac80afb669773118f04c94fe6e52d84ea/src/helpers/account.js#L26-L46'>
       <span>src/helpers/account.js</span>
       </a>
     
@@ -1722,7 +1604,7 @@ The last item of the array is the balance available right now.</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/9bbab2aab84db2c04e93289439e0736d050b87b6/src/helpers/account.js#L54-L87'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/11aed30ac80afb669773118f04c94fe6e52d84ea/src/helpers/account.js#L54-L87'>
       <span>src/helpers/account.js</span>
       </a>
     
@@ -1813,7 +1695,7 @@ NB the last item of the array is actually the current total balance.</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/9bbab2aab84db2c04e93289439e0736d050b87b6/src/helpers/account.js#L94-L150'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/11aed30ac80afb669773118f04c94fe6e52d84ea/src/helpers/account.js#L94-L150'>
       <span>src/helpers/account.js</span>
       </a>
     
@@ -1893,7 +1775,7 @@ NB the last item of the array is actually the current total balance.</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/9bbab2aab84db2c04e93289439e0736d050b87b6/src/helpers/account.js#L156-L161'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/11aed30ac80afb669773118f04c94fe6e52d84ea/src/helpers/account.js#L156-L161'>
       <span>src/helpers/account.js</span>
       </a>
     
@@ -1982,7 +1864,7 @@ NB the last item of the array is actually the current total balance.</p>
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/9bbab2aab84db2c04e93289439e0736d050b87b6/src/helpers/currencies/formatShort.js#L11-L22'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/11aed30ac80afb669773118f04c94fe6e52d84ea/src/helpers/currencies/formatShort.js#L11-L22'>
       <span>src/helpers/currencies/formatShort.js</span>
       </a>
     
@@ -2060,7 +1942,7 @@ For instance 15k 20k ,...</p>
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/9bbab2aab84db2c04e93289439e0736d050b87b6/src/mock/account.js#L5-L5'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/11aed30ac80afb669773118f04c94fe6e52d84ea/src/mock/account.js#L5-L5'>
       <span>src/mock/account.js</span>
       </a>
     
@@ -2108,7 +1990,7 @@ For instance 15k 20k ,...</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/9bbab2aab84db2c04e93289439e0736d050b87b6/src/mock/account.js#L31-L34'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/11aed30ac80afb669773118f04c94fe6e52d84ea/src/mock/account.js#L31-L34'>
       <span>src/mock/account.js</span>
       </a>
     
@@ -2175,7 +2057,7 @@ For instance 15k 20k ,...</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/9bbab2aab84db2c04e93289439e0736d050b87b6/src/mock/account.js#L39-L41'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/11aed30ac80afb669773118f04c94fe6e52d84ea/src/mock/account.js#L39-L41'>
       <span>src/mock/account.js</span>
       </a>
     
@@ -2250,7 +2132,7 @@ For instance 15k 20k ,...</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/9bbab2aab84db2c04e93289439e0736d050b87b6/src/mock/account.js#L46-L51'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/11aed30ac80afb669773118f04c94fe6e52d84ea/src/mock/account.js#L46-L51'>
       <span>src/mock/account.js</span>
       </a>
     
@@ -2325,7 +2207,7 @@ For instance 15k 20k ,...</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/9bbab2aab84db2c04e93289439e0736d050b87b6/src/mock/account.js#L57-L93'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/11aed30ac80afb669773118f04c94fe6e52d84ea/src/mock/account.js#L57-L93'>
       <span>src/mock/account.js</span>
       </a>
     
@@ -2421,7 +2303,7 @@ For instance 15k 20k ,...</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/9bbab2aab84db2c04e93289439e0736d050b87b6/src/mock/account.js#L98-L113'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/11aed30ac80afb669773118f04c94fe6e52d84ea/src/mock/account.js#L98-L113'>
       <span>src/mock/account.js</span>
       </a>
     
@@ -2509,7 +2391,7 @@ For instance 15k 20k ,...</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/9bbab2aab84db2c04e93289439e0736d050b87b6/src/mock/account.js#L115-L118'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/11aed30ac80afb669773118f04c94fe6e52d84ea/src/mock/account.js#L115-L118'>
       <span>src/mock/account.js</span>
       </a>
     
@@ -2607,7 +2489,7 @@ For instance 15k 20k ,...</p>
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/9bbab2aab84db2c04e93289439e0736d050b87b6/src/models/account.js#L5-L5'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/11aed30ac80afb669773118f04c94fe6e52d84ea/src/models/account.js#L5-L5'>
       <span>src/models/account.js</span>
       </a>
     
@@ -2655,7 +2537,7 @@ For instance 15k 20k ,...</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/9bbab2aab84db2c04e93289439e0736d050b87b6/src/models/account.js#L14-L18'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/11aed30ac80afb669773118f04c94fe6e52d84ea/src/models/account.js#L14-L18'>
       <span>src/models/account.js</span>
       </a>
     
@@ -2730,7 +2612,7 @@ For instance 15k 20k ,...</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/9bbab2aab84db2c04e93289439e0736d050b87b6/src/models/account.js#L28-L99'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/11aed30ac80afb669773118f04c94fe6e52d84ea/src/models/account.js#L28-L99'>
       <span>src/models/account.js</span>
       </a>
     
@@ -2815,12 +2697,235 @@ For instance 15k 20k ,...</p>
   
   <div class='clearfix'>
     
+    <h3 class='fl m0' id='parsechunksreducer'>
+      parseChunksReducer
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/11aed30ac80afb669773118f04c94fe6e52d84ea/src/qrstream/importer.js#L15-L52'>
+      <span>src/qrstream/importer.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>reduce chunks data array to add on more chunk to it</p>
+
+
+  <div class='pre p1 fill-light mt0'>parseChunksReducer(chunks: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;Chunk>, chunkStr: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, logger: any?): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;Chunk></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>chunks</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;Chunk>)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>chunkStr</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>logger</span> <code class='quiet'>(any?)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;Chunk></code>
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='arechunkscomplete'>
+      areChunksComplete
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/11aed30ac80afb669773118f04c94fe6e52d84ea/src/qrstream/importer.js#L58-L59'>
+      <span>src/qrstream/importer.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>check if the chunks have all been retrieved</p>
+
+
+  <div class='pre p1 fill-light mt0'>areChunksComplete</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>chunks</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;Chunk>)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='chunkstoresult'>
+      chunksToResult
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/11aed30ac80afb669773118f04c94fe6e52d84ea/src/qrstream/importer.js#L65-L71'>
+      <span>src/qrstream/importer.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>return final result of the chunks. assuming you have checked <code>areChunksComplete</code></p>
+
+
+  <div class='pre p1 fill-light mt0'>chunksToResult(rawChunks: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;Chunk>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>rawChunks</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;Chunk>)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
     <h3 class='fl m0' id='bignumber'>
       BigNumber
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/9bbab2aab84db2c04e93289439e0736d050b87b6/src/types/index.js#L31-L31'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/11aed30ac80afb669773118f04c94fe6e52d84ea/src/types/index.js#L31-L31'>
       <span>src/types/index.js</span>
       </a>
     
@@ -2876,7 +2981,7 @@ For instance 15k 20k ,...</p>
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/9bbab2aab84db2c04e93289439e0736d050b87b6/src/types/index.js#L40-L43'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/LedgerHQ/ledger-live-common/blob/11aed30ac80afb669773118f04c94fe6e52d84ea/src/types/index.js#L40-L43'>
       <span>src/types/index.js</span>
       </a>
     
