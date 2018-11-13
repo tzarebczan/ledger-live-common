@@ -782,6 +782,39 @@ const cryptocurrenciesById = {
       }
     ]
   },
+  lbry: {
+  id: "lbry",
+  coinType: 140,
+  name: "LBRY Credits",
+  ticker: "LBC",
+  scheme: "lbry",
+  color: "#38D9A9",
+  supportsSegwit: false,
+  family: "bitcoin",
+  ledgerExplorerId: "lbc",
+  blockAvgTime: 150,
+  bitcoinLikeInfo: {
+    P2PKH: 85,
+    P2SH: 122
+  },
+  units: [
+    {
+      name: "lbry",
+      code: "LBC",
+      magnitude: 8
+    },
+    {
+      name: "mLBC",
+      code: "mLBC",
+      magnitude: 5
+    },
+    {
+      name: "dewey",
+      code: "dewey",
+      magnitude: 0
+    }
+  ]
+},
   litecoin: {
     id: "litecoin",
     coinType: 2,

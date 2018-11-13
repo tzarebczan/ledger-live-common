@@ -38,6 +38,7 @@ export const defaultExplorers: CryptoCurrencyConfig<Explorer> = {
   icon: () => null,
   iota: () => null,
   komodo: hash => `https://kmdexplorer.io/tx/${hash}`,
+  lbry: hash => `https://explorer.lbry.io/tx/${hash}`,
   lisk: () => null,
   litecoin: hash => `https://live.blockcypher.com/ltc/tx/${hash}`,
   monero: hash => `https://moneroblocks.info/tx/${hash}`,

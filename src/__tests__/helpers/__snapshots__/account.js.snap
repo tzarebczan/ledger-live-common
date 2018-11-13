@@ -1363,43 +1363,43 @@ exports[`getBalanceHistorySum with lot of accounts 1`] = `
 Array [
   Object {
     "date": 2018-03-06T03:59:59.999Z,
-    "value": "8852988687",
+    "value": "8799000797",
   },
   Object {
     "date": 2018-03-07T03:59:59.999Z,
-    "value": "11269164942",
+    "value": "10908339552",
   },
   Object {
     "date": 2018-03-08T03:59:59.999Z,
-    "value": "11422836857",
+    "value": "12508870284",
   },
   Object {
     "date": 2018-03-09T03:59:59.999Z,
-    "value": "13529954544",
+    "value": "15069578579",
   },
   Object {
     "date": 2018-03-10T03:59:59.999Z,
-    "value": "15385874814",
+    "value": "16976567118",
   },
   Object {
     "date": 2018-03-11T03:59:59.999Z,
-    "value": "16713343836",
+    "value": "19078986862",
   },
   Object {
     "date": 2018-03-12T03:59:59.999Z,
-    "value": "18119188972",
+    "value": "20907279937",
   },
   Object {
     "date": 2018-03-13T03:59:59.999Z,
-    "value": "18453654703",
+    "value": "23567162492",
   },
   Object {
     "date": 2018-03-14T03:59:59.999Z,
-    "value": "20847335426",
+    "value": "25691591128",
   },
   Object {
     "date": 2018-03-14T17:34:42.000Z,
-    "value": "21039700141",
+    "value": "26934757111",
   },
 ]
 `;
@@ -1456,14 +1456,14 @@ Object {
     Object {
       "data": Array [
         Object {
-          "accountId": "mock:1:game_credits:seed_7:",
+          "accountId": "mock:1:gochain:seed_7:",
           "blockHash": "E02ECF8A75C36FE328C473C811CA604B828E4F2ACEC48D61C8CF2FE5BE64C4B4",
           "blockHeight": 123446,
           "date": 2018-03-14T08:18:34.104Z,
           "extra": Object {},
           "fee": "33573",
           "hash": "6F835B8390B39C89A1122A812240D2224D06B298EF6DB557D2A18F7AB3E6BF93",
-          "id": "mock_op_0_mock:1:game_credits:seed_7:",
+          "id": "mock_op_0_mock:1:gochain:seed_7:",
           "recipients": Array [
             "1jjKMPMx5ur5TLhXhhXSLhZw1dDq3zY",
           ],
@@ -1474,14 +1474,14 @@ Object {
           "value": "3357286",
         },
         Object {
-          "accountId": "mock:1:game_credits:seed_7:",
+          "accountId": "mock:1:gochain:seed_7:",
           "blockHash": "15B7352A1BA1EE1BBD2D48D87816E20AFC651D13BB8A031269A4999DFFD5760D",
           "blockHeight": 123446,
           "date": 2018-03-14T08:16:52.572Z,
           "extra": Object {},
           "fee": "2405",
           "hash": "988D54C0BEC5A27BB3AA4417792CC18E1B8B6EF9EABCB94FD8CC275C495A5350",
-          "id": "mock_op_1_mock:1:game_credits:seed_7:",
+          "id": "mock_op_1_mock:1:gochain:seed_7:",
           "recipients": Array [
             "1m8HxmuXUzy5muw7Ja8E3UxS1VfxiU1MHp",
           ],
@@ -1492,14 +1492,14 @@ Object {
           "value": "240490",
         },
         Object {
-          "accountId": "mock:1:game_credits:seed_7:",
+          "accountId": "mock:1:gochain:seed_7:",
           "blockHash": "75624D51A31631C9DC3FE4A86086A81F285FC463DE40B7D44E2B8AD197A3F7B2",
           "blockHeight": 123446,
           "date": 2018-03-14T08:12:47.744Z,
           "extra": Object {},
           "fee": "3349",
           "hash": "1B4FDCBDC64B184705F60EE93CD89CA5FB857D01410D8057A29C4A149FC169FA",
-          "id": "mock_op_2_mock:1:game_credits:seed_7:",
+          "id": "mock_op_2_mock:1:gochain:seed_7:",
           "recipients": Array [
             "17CUC1UEeBsZco9Yoytfv4GZKXS7UoyNf",
           ],
@@ -1510,14 +1510,14 @@ Object {
           "value": "334934",
         },
         Object {
-          "accountId": "mock:1:game_credits:seed_7:",
+          "accountId": "mock:1:gochain:seed_7:",
           "blockHash": "FD1341CA00ADCDBB394FF99A6D62CB83103B23C0C65C47149D1852D8873569AF",
           "blockHeight": 123440,
           "date": 2018-03-14T06:38:39.544Z,
           "extra": Object {},
           "fee": "162",
           "hash": "0133020280E5320FE35222134339037357374D920F9602926E414C9B3487C576",
-          "id": "mock_op_3_mock:1:game_credits:seed_7:",
+          "id": "mock_op_3_mock:1:gochain:seed_7:",
           "recipients": Array [
             "1wdZG3Pbg8YE1jQ4nhiF5wiq7ADd7Dnu",
           ],
@@ -1533,14 +1533,14 @@ Object {
     Object {
       "data": Array [
         Object {
-          "accountId": "mock:1:game_credits:seed_7:",
+          "accountId": "mock:1:gochain:seed_7:",
           "blockHash": "ED81F7A66651885AB2E81200BCB2502F1D5B26F86DEAFF9D9F32520F19A93AB2",
           "blockHeight": 123394,
           "date": 2018-03-13T19:09:14.170Z,
           "extra": Object {},
           "fee": "48",
           "hash": "9CB1DA2E5C4336D1FBD64E444BA6003DB94E1A3444C9A28B4D3F5E57E2657FA9",
-          "id": "mock_op_4_mock:1:game_credits:seed_7:",
+          "id": "mock_op_4_mock:1:gochain:seed_7:",
           "recipients": Array [
             "1iqFBQgYcQc3kbhnoQVoyy54Hrj5F",
           ],
@@ -1551,14 +1551,14 @@ Object {
           "value": "4790",
         },
         Object {
-          "accountId": "mock:1:game_credits:seed_7:",
+          "accountId": "mock:1:gochain:seed_7:",
           "blockHash": "947B4C8908BF6CF747DA2C1F8E5BD549B8B51473EB13D545D3679D4DD4457206",
           "blockHeight": 123387,
           "date": 2018-03-13T17:23:07.047Z,
           "extra": Object {},
           "fee": "439",
           "hash": "3396ACB2C525893B224787A2C63A2B8E202BF61CB695DEDE2F3656FCC6786FF4",
-          "id": "mock_op_5_mock:1:game_credits:seed_7:",
+          "id": "mock_op_5_mock:1:gochain:seed_7:",
           "recipients": Array [
             "17CTQvbr2kKNaFEwze1K6KnPvHmUs1",
           ],
@@ -1569,14 +1569,14 @@ Object {
           "value": "43937",
         },
         Object {
-          "accountId": "mock:1:game_credits:seed_7:",
+          "accountId": "mock:1:gochain:seed_7:",
           "blockHash": "99CBA582DACC0EC24C530EF9AB1886E4815429AAA0674E34E429EC60A39CE468",
           "blockHeight": 123382,
           "date": 2018-03-13T16:11:27.151Z,
           "extra": Object {},
           "fee": "6641",
           "hash": "B754A54DEE2B6AE9EE347DC0A496E33F8A5EF0FB00EAEFA2FFCC4335E6EA063C",
-          "id": "mock_op_6_mock:1:game_credits:seed_7:",
+          "id": "mock_op_6_mock:1:gochain:seed_7:",
           "recipients": Array [
             "1ghqQ4QASb5JtmSLHMJZeZdF6aDKW",
           ],
@@ -1587,14 +1587,14 @@ Object {
           "value": "664120",
         },
         Object {
-          "accountId": "mock:1:game_credits:seed_7:",
+          "accountId": "mock:1:gochain:seed_7:",
           "blockHash": "A9F60463F590837E7566D16EC01870B97FCACC7B69562C75FE94703ADE635BFF",
           "blockHeight": 123377,
           "date": 2018-03-13T14:58:23.992Z,
           "extra": Object {},
           "fee": "5194",
           "hash": "7487EADD9B76FF1C1AA80AC69CEC56B585DFA6CD9907ED14DCDB54DC8C61748C",
-          "id": "mock_op_7_mock:1:game_credits:seed_7:",
+          "id": "mock_op_7_mock:1:gochain:seed_7:",
           "recipients": Array [
             "1xpHKawLQeGabPdffZbwTLreTCP5",
           ],
@@ -1605,14 +1605,14 @@ Object {
           "value": "519443",
         },
         Object {
-          "accountId": "mock:1:game_credits:seed_7:",
+          "accountId": "mock:1:gochain:seed_7:",
           "blockHash": "2107DE9DA917528EF900229B3B2DF7F1B866388B916055090E5CAA664A0A54D4",
           "blockHeight": 123370,
           "date": 2018-03-13T13:07:07.534Z,
           "extra": Object {},
           "fee": "31813",
           "hash": "C16121083DA16F0EC4091775702D32DF921EF6C5878E48B437867C0BD79BC735",
-          "id": "mock_op_8_mock:1:game_credits:seed_7:",
+          "id": "mock_op_8_mock:1:gochain:seed_7:",
           "recipients": Array [
             "1Y7PdrS6SXMSSCC7XCrtegtvzk",
           ],
@@ -1623,14 +1623,14 @@ Object {
           "value": "3181264",
         },
         Object {
-          "accountId": "mock:1:game_credits:seed_7:",
+          "accountId": "mock:1:gochain:seed_7:",
           "blockHash": "A1E71BFC6142ADE512F3312B856F302EC3F82DA569C9111EA8DA761BD034C0F0",
           "blockHeight": 123358,
           "date": 2018-03-13T10:06:04.249Z,
           "extra": Object {},
           "fee": "1261",
           "hash": "818F742481F3771C58609695551C8B9E7EE2166F7960B062CF31FB9D08D28C50",
-          "id": "mock_op_9_mock:1:game_credits:seed_7:",
+          "id": "mock_op_9_mock:1:gochain:seed_7:",
           "recipients": Array [
             "1uuuJthk22168yxjZ3W7UxBqBK",
           ],
